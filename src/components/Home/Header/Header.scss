@@ -1,0 +1,38 @@
+.topBar {
+    width: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-leftBlock {
+        background-color: green;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    &-rightBlock {
+        background-color: yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    &-ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    &-li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-link {
+        padding: 0 0.8rem 0 0.8rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+}
