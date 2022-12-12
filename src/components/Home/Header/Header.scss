@@ -1,19 +1,18 @@
 .topBar {
     width: 100%;
-    background-color: red;
+    background-color: #000000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 2.3rem;
     &-leftBlock {
-        background-color: green;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
     &-rightBlock {
-        background-color: yellow;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -31,8 +30,84 @@
         justify-content: center;
     }
     &-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
         padding: 0 0.8rem 0 0.8rem;
         font-size: 0.75rem;
         text-transform: uppercase;
+        color: white;
+        .link {
+            &-text {
+                color: rgba(255, 255, 255, 0.702);
+            }
+        }
+    }
+    &-icon {
+        width: 12px;
+        height: 12px;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.navBar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 1rem;
+    margin-top: 1.25rem;
+    background-color: rgb(65, 108, 142);
+    &-sections {
+        display: flex;
+        flex-direction: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1.25rem;
+        .sections {
+            &-ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 3rem;
+            }
+            &-link {
+                padding: 0.5rem 0;
+                color: white;
+            }
+        }
+    }
+
+    &-submenu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        padding: 1.25rem;
+        box-shadow: 0 6px 10px 0 rgb(0 0 0 / 20%);
+        .submenu {
+            &-ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            &-link {
+                padding: 0.5rem 1rem;
+                color: #2f3037;
+            }
+        }
     }
 }
