@@ -1,3 +1,4 @@
+import { FacebookLogo, InstagramLogo, MainLogo, TikTokLogo, TwitterLogo, YoutubeLogo } from '../../Common/Common'
 import './Header.scss'
 
 
@@ -27,13 +28,13 @@ const TopBar = () => {
         { id:8 , text:'More' , chevron: true }
     ]
 
-    const social = [
-        { id: 0, type:'Facebook', img:''},        
-        { id: 1, type:'Instagram', img:''},
-        { id: 2, type:'Twitter', img:''},
-        { id: 3, type:'Youtube', img:''},
-        { id: 4, type:'TikTok', img:''}        
-    ]
+    // const social = [
+    //     { id: 0, type:'Facebook', img:''},        
+    //     { id: 1, type:'Instagram', img:''},
+    //     { id: 2, type:'Twitter', img:''},
+    //     { id: 3, type:'Youtube', img:''},
+    //     { id: 4, type:'TikTok', img:''}        
+    // ]
     
     return (
         <div className="topBar">
@@ -43,7 +44,7 @@ const TopBar = () => {
 
                 {/* Name */}
                 <a href="" className="topBar-link">
-                    <img src="" alt="" className="link-icon" />
+                    <MainLogo/>
                     <span className="link-text">Tomorrowland</span>
                 </a>
 
@@ -66,11 +67,16 @@ const TopBar = () => {
 
                 {/* Social */}
                 <ul className="topBar-ul">
-                    { social.map ( ( {id, type }) => 
+                    {/* { social.map ( ( {id, type }) => 
                         <li key={id} className="topBar-li">
                             <a className='topBar-link' href="">{type}</a>
                         </li>
-                    )}
+                    )} */}
+                    <FacebookLogo/>
+                    <InstagramLogo/>
+                    <TwitterLogo/>
+                    <YoutubeLogo/>
+                    <TikTokLogo/>
                 </ul>
 
             </div>
@@ -156,6 +162,9 @@ const NavBar = () => {
                         )}
                     </ul>
                 </nav>
+                <button className='submenu-button'>
+                    <span className='button-text'>Pre-Register Now</span>
+                </button>
             </div>
 
         </div>
