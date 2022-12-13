@@ -1,0 +1,125 @@
+@import './../../../partials/_mixins.scss';
+
+
+.Info {
+    @include flex (row, nowrap, center, center);
+    &-ul {
+        @include grid (3,2rem);
+        max-width: 1400px;
+        margin: auto;
+        padding: 6rem 1rem;
+    }
+    &-card {
+        .Card {
+            &-container {
+                @include flex (column, nowrap, center, center);
+                text-align: center;
+                height: 24rem;
+                color: white;
+                position: relative;
+            }
+            &-content {
+                @include flex (column, nowrap, center, center);
+                position: absolute;
+                z-index: 4;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 2rem;
+                .Content {
+                    &-title {
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                    &-description {
+                        font-size: 1rem;
+                        margin: 16px 0;
+                        line-height: 1.6rem;
+                        color: rgba(250,249,248,.75);
+                    }
+                    &-button {
+                        background-color: white;
+                        color: black;
+                        padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        position: absolute;
+                        bottom: 0;
+                        font-size: 0.75rem;
+                        line-height: 1.6;
+                        letter-spacing: 3px;
+                        font-weight: 700;
+                        @include flex (row, nowrap, center, center);
+                        gap: 1rem;
+                    }
+                    &-caption {
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                    }
+                    &-titleB {
+                        font-size: 1.75rem;
+                        margin: 1rem 0 1.4rem;
+                    }
+                    &-descriptionB {
+                        font-size: 1.12rem;
+                        line-height: 1.6rem;
+                        font-weight: 400;
+                    }
+                }
+            }  
+            &-background {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: rgb(0,0,0);
+                    background: linear-gradient(0deg, rgba(0,0,0,1) 6%, rgba(0,0,0,0.4) 76%);
+                    z-index: 3;
+                }
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: rgba(0, 0, 0, 0.543);
+                    opacity: 0;
+                    transition: 0.5s ease;
+                    z-index: 2;
+                }
+                .Background {
+                    &-img {
+                        height: 100%;
+                        transition: 0.5s ease;
+                    }
+                }
+            }
+            &-link {
+                &:hover{
+                    .Card {
+                        &-background {
+                            &:before {
+                                opacity: 1;
+                            }
+                            .Background {
+                                &-img {
+                                    transform: scale(1.05);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

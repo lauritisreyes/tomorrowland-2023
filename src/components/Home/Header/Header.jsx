@@ -1,4 +1,4 @@
-import { FacebookLogo, InstagramLogo, MainLogo, TikTokLogo, TwitterLogo, YoutubeLogo } from '../../Common/Common'
+import { IconContainer, MainLogo } from '../../Common/Common'
 import './Header.scss'
 
 
@@ -28,35 +28,35 @@ const TopBar = () => {
         { id:8 , text:'More' , chevron: true }
     ]
 
-    // const social = [
-    //     { id: 0, type:'Facebook', img:''},        
-    //     { id: 1, type:'Instagram', img:''},
-    //     { id: 2, type:'Twitter', img:''},
-    //     { id: 3, type:'Youtube', img:''},
-    //     { id: 4, type:'TikTok', img:''}        
-    // ]
+    const social = [
+        { id: 0, name:'Facebook'},        
+        { id: 1, name:'Instagram'},
+        { id: 2, name:'Twitter'},
+        { id: 3, name:'Youtube'},
+        { id: 4, name:'TikTok'}        
+    ]
     
     return (
-        <div className="topBar">
+        <div className="TopBar">
 
             {/* Left Block */}
-            <div className="topBar-leftBlock">
+            <div className="TopBar-leftBlock">
 
                 {/* Name */}
-                <a href="" className="topBar-link">
+                <a href="" className="TopBar-link">
                     <MainLogo/>
-                    <span className="link-text">Tomorrowland</span>
+                    <span className="Link-text">Tomorrowland</span>
                 </a>
 
                 {/* Navigation */}
-                <nav className="topBar-nav">
-                    <ul className="topBar-ul">
+                <nav className="TopBar-nav">
+                    <ul className="TopBar-ul">
                         { links.map ( ({ id, text, chevron }) =>
-                            <li key={id} className="topBar-li">
-                                <a className="topBar-link" href="">
-                                    <span className="link-text">{text}</span>
-                                    <span className={`topBar-icon ${ chevron ? 'active' : ''}`}>
-                                        <img src="assets/header/chevron.svg" alt="" className="topBar-chevron" />
+                            <li key={id} className="TopBar-li">
+                                <a className="TopBar-link" href="">
+                                    <span className="Link-text">{text}</span>
+                                    <span className={`TopBar-icon ${ chevron ? 'active' : ''}`}>
+                                        <img src="assets/header/chevron.svg" alt="" className="Icon-chevron" />
                                     </span>
                                 </a>
                                 
@@ -66,25 +66,19 @@ const TopBar = () => {
                 </nav>
 
                 {/* Social */}
-                <ul className="topBar-ul">
-                    {/* { social.map ( ( {id, type }) => 
-                        <li key={id} className="topBar-li">
-                            <a className='topBar-link' href="">{type}</a>
+                <ul className="TopBar-ul">
+                    { social.map ( (social) => 
+                        <li key={social.id} className="TopBar-li">
+                            <a className='TopBar-link' href=""><IconContainer {...social}/></a>
                         </li>
-                    )} */}
-                    <FacebookLogo/>
-                    <InstagramLogo/>
-                    <TwitterLogo/>
-                    <YoutubeLogo/>
-                    <TikTokLogo/>
+                    )} 
                 </ul>
-
             </div>
 
             {/* Right Block */}
-            <div className="topBar-rightBlock">
-                <a href="" className="topBar-link">
-                    <span className="link-text">My account</span>
+            <div className="TopBar-rightBlock">
+                <a href="" className="TopBar-link">
+                    <span className="Link-text">My account</span>
                 </a>
             </div>
 
@@ -120,50 +114,53 @@ const NavBar = () => {
 
 
     return (
-        <div className="navBar">
+        <div className="NavBar">
 
 
             {/* Nav Bar Sections */}
-            <div className="navBar-sections">
+            <div className="NavBar-sections">
 
                 {/* Logo */}
-                <a href="" className="sections-link">
-                    <span className="link-text">Tomorrowland Belgium</span>
+                <a href="" className="Sections-link">
+                    <span className="Link-text Link-logo">Tomorrowland <span className='Logo-highlight'>Belgium</span></span>
                 </a>
 
                 {/* Navigation */}
-                <nav className="sections-nav">
-                    <ul className="sections-ul">
+                <nav className="Sections-nav">
+                    <ul className="Sections-ul ">
                         {section.map ( ({id, name}) =>
-                            <li className='sections-li' key={id}>
-                                <a href="" className="sections-link">{name}</a>
+                            <li className='Sections-li Link-lineEffect light' key={id}>
+                                <a href="" className="Sections-link">
+                                    <span className="Link-text">{name}</span></a>
                             </li>
                         )}
                     </ul>
                 </nav>
 
                 {/* Language */}
-                <ul className="sections-ul">
+                <ul className="Sections-ul Sections-language">
                     {language.map ( ( {id,type} ) => 
-                        <li className='sections-link' key={id}>{type}</li>
+                        <li className='Sections-link Language-link' key={id}>{type}</li>
                     )}
                 </ul>
             </div>
 
 
             {/* Nav Bar Submenu */}
-            <div className="navBar-submenu">
-                <nav className="submenu-nav">
-                    <ul className='submenu-ul'>
+            <div className="NavBar-submenu">
+                <nav className="Submenu-nav">
+                    <ul className='Submenu-ul'>
                         {subcategories.map ( ( {id,name} ) => 
-                            <li className='submenu-li' key={id}>
-                                <a className='submenu-link' href="">{name}</a>
+                            <li className='Submenu-li Link-lineEffect' key={id}>
+                                <a className='Submenu-link' href="">
+                                    <span className="Link-text">{name}</span>
+                                </a>
                             </li>
                         )}
                     </ul>
                 </nav>
-                <button className='submenu-button'>
-                    <span className='button-text'>Pre-Register Now</span>
+                <button className='Submenu-button'>
+                    <span className='Button-text'>Pre-Register Now</span>
                 </button>
             </div>
 
