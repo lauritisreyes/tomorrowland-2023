@@ -8,6 +8,12 @@
         max-width: 1400px;
         margin: auto;
         padding: 6rem 1rem;
+        @media (max-width: 1200px) {
+            @include grid (2,2rem);
+        }
+        @media (max-width: 770px) {
+            @include grid (1,2rem);
+        }
     }
     &-card {
         .Card {

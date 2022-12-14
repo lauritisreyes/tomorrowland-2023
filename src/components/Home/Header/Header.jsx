@@ -1,4 +1,4 @@
-import { IconContainer, MainLogo } from '../../Common/Common'
+import { ChevronDown, ChevronRight, IconContainer, MainLogo } from '../../Common/Common'
 import './Header.scss'
 
 
@@ -20,12 +20,13 @@ const TopBar = () => {
         { id:0 , text:'Belgium', chevron: true },
         { id:1 , text:'Winter', chevron: false },
         { id:2 , text:'Events' , chevron: true },
-        { id:3 , text:'Music' , chevron: false},
-        { id:4 , text:'Foundation' , chevron: false },
-        { id:5, text:'Store', chevron: false },
-        { id:6, text:'NFT', chevron: false },
+        { id:3 , text:'Terra Solis' , chevron: false},
+        { id:4 , text:'Store' , chevron: false },
+        { id:5, text:'Music', chevron: false },
+        { id:6, text:'Fundation', chevron: false },
         { id:7 , text:'FAQ' , chevron: false },
-        { id:8 , text:'More' , chevron: true }
+        { id:8 , text:'More' , chevron: true },
+        { id:9, text:'Tomorrowland', chevron: true}
     ]
 
     const social = [
@@ -45,7 +46,7 @@ const TopBar = () => {
                 {/* Name */}
                 <a href="" className="TopBar-link">
                     <MainLogo/>
-                    <span className="Link-text">Tomorrowland</span>
+                    <span className="Link-text Link-logo">Tomorrowland</span>
                 </a>
 
                 {/* Navigation */}
@@ -56,7 +57,7 @@ const TopBar = () => {
                                 <a className="TopBar-link" href="">
                                     <span className="Link-text">{text}</span>
                                     <span className={`TopBar-icon ${ chevron ? 'active' : ''}`}>
-                                        <img src="assets/header/chevron.svg" alt="" className="Icon-chevron" />
+                                        <ChevronDown/>
                                     </span>
                                 </a>
                                 
@@ -68,8 +69,8 @@ const TopBar = () => {
                 {/* Social */}
                 <ul className="TopBar-ul">
                     { social.map ( (social) => 
-                        <li key={social.id} className="TopBar-li">
-                            <a className='TopBar-link' href=""><IconContainer {...social}/></a>
+                        <li key={social.id} className="TopBar-li Li-social">
+                            <a className='TopBar-link Link-social' href=""><IconContainer {...social}/></a>
                         </li>
                     )} 
                 </ul>
@@ -111,6 +112,9 @@ const NavBar = () => {
         { id:4, name: 'Adscendo', symbol: true },
     ]
 
+    const navbarSelect = 0
+    const submenuSelect = 0
+
 
 
     return (
@@ -122,14 +126,18 @@ const NavBar = () => {
 
                 {/* Logo */}
                 <a href="" className="Sections-link">
-                    <span className="Link-text Link-logo">Tomorrowland <span className='Logo-highlight'>Belgium</span></span>
+                    <div className="Link-logoimage">
+                        <img src="./assets/header/main-logo-dark.png" alt="Tomorrowland Logo" className="Logoimage-symbol" />
+                    </div>
+                    <span className="Link-text Link-logo">Tomorrowland</span>
+                    <span className='Logo-highlight'>Belgium</span>
                 </a>
 
                 {/* Navigation */}
                 <nav className="Sections-nav">
                     <ul className="Sections-ul ">
                         {section.map ( ({id, name}) =>
-                            <li className='Sections-li Link-lineEffect light' key={id}>
+                            <li className={`Sections-li Link-lineEffect light ${navbarSelect === id ? 'activeSection' : ''}`} key={id}>
                                 <a href="" className="Sections-link">
                                     <span className="Link-text">{name}</span></a>
                             </li>
@@ -143,6 +151,16 @@ const NavBar = () => {
                         <li className='Sections-link Language-link' key={id}>{type}</li>
                     )}
                 </ul>
+
+                {/* Movil */}
+                <div className="NavBar-movil">
+                    <span className="Movil-word">Menu</span>
+                    <div className="Movil-burger">
+                        <div className="Burger-rectangle"></div>
+                        <div className="Burger-rectangle"></div>
+                        <div className="Burger-rectangle"></div>
+                    </div>
+                </div>
             </div>
 
 
@@ -151,8 +169,8 @@ const NavBar = () => {
                 <nav className="Submenu-nav">
                     <ul className='Submenu-ul'>
                         {subcategories.map ( ( {id,name} ) => 
-                            <li className='Submenu-li Link-lineEffect' key={id}>
-                                <a className='Submenu-link' href="">
+                            <li className={`Submenu-li Link-lineEffect ${submenuSelect === id ? 'activeSubmenu' : ''}`} key={id}>
+                                <a className="Submenu-link" href="">
                                     <span className="Link-text">{name}</span>
                                 </a>
                             </li>
@@ -161,6 +179,7 @@ const NavBar = () => {
                 </nav>
                 <button className='Submenu-button'>
                     <span className='Button-text'>Pre-Register Now</span>
+                    <ChevronRight/>
                 </button>
             </div>
 

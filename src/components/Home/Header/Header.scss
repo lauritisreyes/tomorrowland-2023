@@ -1,34 +1,56 @@
+@import './../../../partials/_mixins.scss';
+
+// Top Bar
 .TopBar {
     width: 100%;
-    background-color: #000000;
+    background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 2.3rem;
     &-leftBlock {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        @include flex (row, nowrap, center, center);
+        height: 100%;
     }
     &-rightBlock {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
+        @include flex (row, nowrap, center, center);
+        height: 100%;
     }
     &-ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        @include flex (row, nowrap, center, center);
+        height: 100%;
     }
     &-li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex (row, nowrap, center, center);
         border-left: 1px solid rgba(255, 255, 255, 0.2);
+        height: 100%;
+        &:last-of-type {
+            display: none;
+        }
+        @media (max-width: 1200px) {
+            display: none;
+            border-left: none;
+            &:last-of-type {
+                display: flex;
+            }
+        }
+        &.Li {
+            &-social {
+                border-left: none;
+                @media (max-width: 1200px) {
+                    display: none;
+                }
+                .Logo-social {
+                    fill: #ffffffb3;
+                }
+                &:hover {
+                    .Logo-social {
+                        fill: white;
+                    }
+                }
+            }
+        }
     }
     &-link {
         display: flex;
@@ -42,11 +64,33 @@
         letter-spacing: 1.5px;
         text-transform: uppercase;
         color: white;
+        height: 100%;
         .Link {
             &-text {
-                color: rgba(255, 255, 255, 0.702);
+                color: #ffffffb3;
+            }
+            &-logo {
+                @media (max-width: 1200px) {
+                    display: none;
+                }
             }
         }
+        &:hover {
+            .Link {
+                &-text {
+                    color: white;
+                }
+            }
+            .Chevron-down {
+                fill: white;
+            }
+        }
+        &.Link-social {
+            padding: 0 0.4rem 0 0.4rem;
+        }
+    }
+    &-nav{
+        height: 100%;
     }
     &-icon {
         width: 10px;
@@ -55,19 +99,33 @@
         &.active {
             display: block;
         }
+        .Chevron-down {
+            fill: #ffffffb3;
+        }
     }
 }
 
+
+// Nav Bar
 .NavBar {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    @include flex (column, nowrap, space-between, center);
     max-width: 1400px;
     margin: auto;
     padding: 0 1rem;
     margin-top: 1.25rem;
+    @media (max-width: 1000px) {
+        width: 370px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    @media (max-width: 750px) {
+        width: 100%;
+        margin: auto;
+        margin-top: 1.25rem;
+    }
+
+    // Sections
     &-sections {
         display: flex;
         flex-flow: row nowrap;
@@ -75,6 +133,10 @@
         align-items: center;
         width: 100%;
         margin-bottom: 1.25rem;
+        @media (max-width: 1000px) {
+            background-color: white;
+            padding: 0.7rem 1rem;
+        }
         .Sections {
             &-ul {
                 display: flex;
@@ -94,33 +156,18 @@
                         text-transform: uppercase;
                     }
                 }
-            }
-            &-nav {
-                .Sections {
-                    &-link {
-                        position: relative;
-                        &:after {
-                            content: '';
-                            width: 20px;
-                            height: 20px;
-                            position: absolute;
-                            transform-origin: center center;
-                            bottom: -2rem;
-                            left: 0;
-                            right: 0;
-                            margin: auto;
-                            background-color: white;
-                            transform: rotate(45deg);
-                            display: block;
-                        }
-                    }
+                @media (max-width: 1000px) {
+                    display: none;
                 }
             }
+            
             &-link {
                 padding: 0.5rem 0;
                 color: #faf9f8;
                 font-size: 0.93rem;
                 letter-spacing: 0.5px;
+                @include flex (row, nowrap, center, center);
+                gap: 0.3rem;
                 .Link {
                     &-text{
                         font-size: 0.93rem;
@@ -129,22 +176,89 @@
                         font-size: 0.75rem;
                         letter-spacing: 2.5px;
                         text-transform: uppercase;
-                        .Logo {
-                            &-highlight {
-                                font-weight: 700;
-                            }
+                        @media (max-width: 1000px) {
+                            display: none;
                         }
                     }
+                    &-logoimage {
+                        width: 27px;
+                        height: 27px;
+                        display: none;
+                        @media (max-width: 1000px) {
+                            display: block;
+                        }
+                    }
+                }
+                .Logo {
+                    &-highlight {
+                        font-size: 0.75rem;
+                        letter-spacing: 2.5px;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        @media (max-width: 1000px) {
+                            color: black;
+                        }
+                    }
+                }
+            }
+            &-nav {
+                @media (max-width: 1000px) {
+                    display: none;
                 }
             }
         }
     }
 
+    // Movil Menu
+    &-movil {
+        @include flex (row, nowrap, center, center);
+        gap: 0.5rem;
+        display: none;
+        @media (max-width: 1000px) {
+            display: flex;
+        }
+        .Movil {
+            &-word {
+                color: black;
+                font-size: 0.75rem;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            &-burger {
+                width: 21px;
+                height: 21px;
+                @include flex (column, nowrap, center, flex-end);
+                gap: 4px;
+                .Burger {
+                    &-rectangle {
+                        width: 21px;
+                        height: 2px;
+                        background-color: black;
+                        &:nth-of-type(2){
+                            width: 16px;
+                            transition: 0.2s ease;
+                        }
+                        &:nth-of-type(3){
+                            width: 17px;
+                            transition: 0.2s ease;
+                        }
+                    }
+                }
+                &:hover {
+                    .Burger {
+                        &-rectangle {
+                            width: 21px;
+                        }
+                    }
+                }            
+            }
+        }
+    }
+
+    // Submenu
     &-submenu {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
+        @include flex (row, nowrap, space-between, center);
         background-color: white;
         width: 100%;
         padding: 1rem;
@@ -171,11 +285,18 @@
                     .Submenu-link {
                         transform: translateY(-0.5rem);
                     }
+                    &.activeSubmenu {
+                        .Submenu-link {
+                            transform: none;
+                        }
+                    }
                 }
             }
             &-button {
                 background-image: linear-gradient(135deg,#554cc7 0,#aa397e 100%);
-                padding: 0.8rem 1.2rem;
+                padding: 0.9rem 1.3rem;
+                @include flex (row, nowrap, center, center);
+                gap: 1rem;
                 .Button {
                     &-text {
                         text-transform: uppercase;
@@ -185,11 +306,20 @@
                         letter-spacing: 1.5px;
                     }
                 }
+                .Chevron-right{
+                    width: 7px;
+                    fill: white;
+                }
             }
+        }
+        @media (max-width: 1000px) {
+            display: none;
         }
     }
 }
 
+
+// Link effects
 .Link {
     &-lineEffect {
         .Link {
@@ -201,7 +331,7 @@
                     height: 2px;
                     background-color: black;
                     position: absolute;
-                    bottom: -0.5rem;
+                    bottom: -0.7rem;
                     left: 0;
                     transition: 0.2s ease;
                 }
@@ -223,6 +353,48 @@
                         background-color: white;
                     }
                 }
+            }
+        }
+        // Active Section Link
+        &.activeSection {
+            .Link {
+                &-text {
+                    &:after {
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        transform-origin: center center;
+                        bottom: -2.7rem;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        background-color: white;
+                        transform: rotate(45deg);
+                        display: block;
+                    }
+                }
+            }
+        }
+        // Active Submenu Link
+        &.activeSubmenu {
+            position: relative;
+            top: -0.5rem;
+            .Link {
+                &-text {
+                    color: #932b6a;
+                    background: linear-gradient(135deg,#554cc7 0,#aa397e 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    &:after {
+                        width: 100%;
+                        background-image: linear-gradient(135deg,#554cc7 0,#aa397e 100%);
+                    }
+                }
+            }
+            &:hover {
+                transform: none;
             }
         }
     }
