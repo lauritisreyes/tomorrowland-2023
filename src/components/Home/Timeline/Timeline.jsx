@@ -47,6 +47,7 @@ const Info = ({ year, title, text}) => {
 const Slider = () => {
 
     const [ foto, setFoto ] = useState(0)
+    const change = ( valor ) => setFoto( valor )
     
     const slides = [
         { id : 0, url : '/assets/2022-1.jpg', title : 'Photo1'},
@@ -60,17 +61,20 @@ const Slider = () => {
         { id : 8, url : '/assets/2022-9.jpg', title : 'Photo9'},
     ]
 
+    const desplazarMenos = () => {
+        
+        let indice = foto === 0 ? slides.length - 1 : foto - 1
+        setFoto( indice )
+        // console.log(indice)
+    }
+    
+
     const desplazarMas = () => {
 
-        setFoto( foto + 1 )
+        let indice = foto === slides.length - 1 ? 0 : foto + 1
+        setFoto ( indice )
+        // console.log(indice)
 
-        if( foto >= slides.length){
-            foto = 0
-        }
-    }
-
-    const desplazarMenos = () => {
-        setFoto( foto - 1 )
     }
 
     return(
@@ -93,7 +97,10 @@ const Slider = () => {
 
                     <ul className="Slider-control">
                         { slides && slides.map( ({ id }) =>
-                             <li key={id} className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}`}></li>
+                             <li 
+                                key={id} 
+                                onClick={ ()=> change(id)}
+                                className="Slider-control-part"></li>
                         ) }
                     </ul>
                 </div>

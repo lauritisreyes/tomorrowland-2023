@@ -73,19 +73,14 @@
         overflow: hidden;
     }
     &-img{
-        width: 900%;
+        width: 1000%;
         height: 100%;
         display: flex;
         flex-flow: row nowrap;
         transition: all 0.5s ease;
         // transform: translateX(-11.11%);
     }
-    // &-photo{
-    //     display: none;
-    //     &.isActive{
-    //         display: block;
-    //     }
-    // }
+    &-photo{}
     &-control{
         width: 50%;
         height: 0.2em;
