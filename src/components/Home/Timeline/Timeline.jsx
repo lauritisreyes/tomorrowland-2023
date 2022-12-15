@@ -4,9 +4,6 @@ import './Timeline.scss'
 
 export const Timeline = () => {
 
-    const [ position, setPosition ] = useState(0)
-    const change = ( valor ) => setPosition( valor )
-
     const Grid = [
         {id : 0, year : '2022', title : 'The Reflection of Love', text : 'In 2022, Tomorrowland made its grand return to the beautiful and unique scenery of De Schorre, welcoming more than 600,000 People of Tomorrow to celebrate together during 3 wonderful weekends of magic. The 16th edition of Tomorrowland revolved around a magnificent new tale ‘The Reflection of Love’, symbolizing the positive energy the festival stands for. The whole world united again in one magical place filled with energy and love, embracing the gift of life and reflecting all that is positive from around the globe while enjoying mesmerizing performances of more than 800 of the planet’s finest electronic artists, including Alesso, Amelie Lens, Armin van Buuren, Charlotte de Witte, Dimitri Vegas & Like Mike, Diplo, Eric Prydz, Lost Frequencies, Marshmello, Martin Garrix, Paul Kalkbrenner and many more…'},
     ]
@@ -87,7 +84,10 @@ const Slider = () => {
 
                     <ul className="Slider-control">
                         {slides && slides.map( ({id}) =>
-                            <li key={id} className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}` }></li>
+                            <li 
+                                key={id} 
+                                className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}` }>
+                            </li>
                         )}
                     </ul>
                 </div>
