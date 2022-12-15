@@ -64,7 +64,11 @@ const Slider = () => {
     ]
 
     const desplazarMas = () => {
-        
+        setFoto( foto + 1 )
+    }
+
+    const desplazarMenos = () => {
+        setFoto( foto - 1 )
     }
 
     return(
@@ -73,7 +77,9 @@ const Slider = () => {
                 <div className="Slider-hidden">
                     <ul className="Slider-img">
                         {slides && slides.map( ({ id, url, title }) =>
-                            <li key={id} className="Slider-photo">
+                            <li 
+                                key={id} 
+                                className={ `Slider-photo ${ foto === id ? 'isActive' : ''}`}>
                                 <img src={url} alt={title} loading='lazy' />
                             </li>
                         )}
@@ -86,13 +92,13 @@ const Slider = () => {
                     </ul>
                 </div>
 
-                <button className="Slider-btn Slider-btn-left">
+                <button onClick={desplazarMenos} className="Slider-btn Slider-btn-left">
                     <svg className='Slider-svg' xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                     </svg>
                 </button>
 
-                <button className="Slider-btn Slider-btn-right">
+                <button onClick={desplazarMas} className="Slider-btn Slider-btn-right">
                     <svg className='Slider-svg' xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>
