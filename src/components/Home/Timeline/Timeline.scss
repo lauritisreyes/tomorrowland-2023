@@ -66,7 +66,6 @@
 .Slider{
     max-width: 60%;
     height: 100%;
-    // margin: auto;
     &-container{
         position: relative;
     }
@@ -78,10 +77,10 @@
         height: 100%;
         display: flex;
         flex-flow: row nowrap;
+        transition: all 0.5s ease;
+        // transform: translateX(-11.11%);
     }
-    &-photo{
-        // max-width: 57.5em;
-    }
+    &-photo{}
     &-control{
         width: 50%;
         height: 0.2em;
