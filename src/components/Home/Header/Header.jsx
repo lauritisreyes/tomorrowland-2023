@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronRight, IconContainer, MainLogo } from '../../Common/Common'
+import { ChevronDown, ChevronRight, Gotolink, IconContainer, MainLogo } from '../../Common/Common'
 import './Header.scss'
 
 
@@ -23,7 +23,7 @@ const TopBar = () => {
         { id:3 , text:'Terra Solis' , chevron: false},
         { id:4 , text:'Store' , chevron: false },
         { id:5, text:'Music', chevron: false },
-        { id:6, text:'Fundation', chevron: false },
+        { id:6, text:'Foundation', chevron: false },
         { id:7 , text:'FAQ' , chevron: false },
         { id:8 , text:'More' , chevron: true },
         { id:9, text:'Tomorrowland', chevron: true}
@@ -44,7 +44,7 @@ const TopBar = () => {
             <div className="TopBar-leftBlock">
 
                 {/* Name */}
-                <a href="" className="TopBar-link">
+                <a href="" className="TopBar-link TopBar-main">
                     <MainLogo/>
                     <span className="Link-text Link-logo">Tomorrowland</span>
                 </a>
@@ -53,7 +53,7 @@ const TopBar = () => {
                 <nav className="TopBar-nav">
                     <ul className="TopBar-ul">
                         { links.map ( ({ id, text, chevron }) =>
-                            <li key={id} className="TopBar-li">
+                            <li key={id} className="TopBar-li TopBar-categories">
                                 <a className="TopBar-link" href="">
                                     <span className="Link-text">{text}</span>
                                     <span className={`TopBar-icon ${ chevron ? 'active' : ''}`}>
@@ -108,12 +108,13 @@ const NavBar = () => {
         { id:0, name: 'Welcome', symbol: false },
         { id:1, name: 'Practical', symbol: false },
         { id:2, name: 'Tickets', symbol: false },
-        { id:3, name: 'Line-up', symbol: true },
+        { id:3, name: 'Line-up', symbol: false },
         { id:4, name: 'Adscendo', symbol: true },
     ]
 
     const navbarSelect = 0
     const submenuSelect = 0
+    const languageSelect = 0
 
 
 
@@ -136,10 +137,12 @@ const NavBar = () => {
                 {/* Navigation */}
                 <nav className="Sections-nav">
                     <ul className="Sections-ul ">
-                        {section.map ( ({id, name}) =>
+                        {section.map ( ({id, name, symbol}) =>
                             <li className={`Sections-li Link-lineEffect light ${navbarSelect === id ? 'activeSection' : ''}`} key={id}>
                                 <a href="" className="Sections-link">
-                                    <span className="Link-text">{name}</span></a>
+                                    <span className="Link-text">{name}</span>
+                                    <span className={`Link-icon Icon-gotolink ${symbol ? 'active' : ''}`}><Gotolink/></span>
+                                </a>
                             </li>
                         )}
                     </ul>
@@ -148,7 +151,9 @@ const NavBar = () => {
                 {/* Language */}
                 <ul className="Sections-ul Sections-language">
                     {language.map ( ( {id,type} ) => 
-                        <li className='Sections-link Language-link' key={id}>{type}</li>
+                        <li className={`Sections-link Link-lineEffect light ${languageSelect === id ? 'activeLanguage' : ''}`} key={id}>
+                            <a href="" className="Link-text Language-link">{type}</a>
+                            </li>
                     )}
                 </ul>
 
@@ -168,18 +173,26 @@ const NavBar = () => {
             <div className="NavBar-submenu">
                 <nav className="Submenu-nav">
                     <ul className='Submenu-ul'>
-                        {subcategories.map ( ( {id,name} ) => 
+                        {subcategories.map ( ( {id,name, symbol} ) => 
                             <li className={`Submenu-li Link-lineEffect ${submenuSelect === id ? 'activeSubmenu' : ''}`} key={id}>
                                 <a className="Submenu-link" href="">
                                     <span className="Link-text">{name}</span>
+                                    <span className={`Link-icon Icon-gotolink ${symbol ? 'active' : ''}`}><Gotolink/></span>
                                 </a>
                             </li>
                         )}
                     </ul>
                 </nav>
                 <button className='Submenu-button'>
-                    <span className='Button-text'>Pre-Register Now</span>
-                    <ChevronRight/>
+                    <div className="Button-container">
+                        <span className="Button-icon hidden">
+                            <ChevronRight/>
+                        </span>
+                        <span className='Button-text'>Pre-Register Now</span>
+                        <span className="Button-icon">
+                            <ChevronRight/>
+                        </span>
+                    </div>
                 </button>
             </div>
 

@@ -33,10 +33,15 @@ const CardA = ({title,description, buttonText, background}) => {
                 <span className="Content-title">{title}</span>
                 <p className="Content-description">{description}</p>
                 <span className="Content-button">
-                    <span className="Button-text">{buttonText}</span>
-                    <span className="Button-icon">
-                        <ChevronRight/>
-                    </span>
+                    <div className="Button-container">
+                        <span className="Button-icon hidden">
+                            <ChevronRight/>
+                        </span>
+                        <span className="Button-text">{buttonText}</span>
+                        <span className="Button-icon">
+                            <ChevronRight/>
+                        </span>
+                    </div>
                 </span>
             </div>
             <div className="Card-background">

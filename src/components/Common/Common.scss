@@ -3,7 +3,11 @@
         width: 1.1rem;
     }
     &-social {
-        height: 1.2rem;
-        width: 1.4rem;
+        max-height: 1.2rem;
+        max-width: 1.6rem;
+    }
+    &-chevron {
+        max-width: 10px;
+        max-height: 10px;
     }
 }

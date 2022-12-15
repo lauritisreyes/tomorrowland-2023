@@ -52,13 +52,42 @@
                         font-size: 1rem;
                         text-transform: uppercase;
                         position: absolute;
+                        display: inline-block;
                         bottom: 0;
+                        margin: 0 auto;
                         font-size: 0.75rem;
                         line-height: 1.6;
                         letter-spacing: 3px;
                         font-weight: 700;
-                        @include flex (row, nowrap, center, center);
-                        gap: 1rem;
+                        .Button {
+                            &-container {
+                                @include flex (row, nowrap, center, center);
+                                gap: 1rem;
+                                position: relative;
+                                transition: 0.2s ease;
+                            }
+                            &-icon {
+                                transition: 0.2s ease;
+                                &.hidden {
+                                    position: absolute;
+                                    left: -1.625rem;
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                        &:hover {
+                            .Button {
+                                &-container {
+                                    transform: translateX(1.625rem);
+                                }
+                                &-icon {
+                                    opacity: 0;
+                                    &.hidden {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
                     }
                     &-caption {
                         font-size: 0.8rem;
