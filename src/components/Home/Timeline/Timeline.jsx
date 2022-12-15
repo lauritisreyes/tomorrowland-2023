@@ -86,7 +86,7 @@ const Slider = () => {
                         {slides && slides.map( ({id}) =>
                             <li 
                                 key={id} 
-                                className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}` }>
+                                className="Slider-control-part">
                             </li>
                         )}
                     </ul>
