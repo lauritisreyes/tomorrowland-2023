@@ -92,7 +92,6 @@
     &-control-part{
         width: calc( 100% / 9);
         height: 100%;
-        // background-color: gray;
         &:hover{
             background-color: #FAF9F8;
             cursor: pointer;
@@ -118,5 +117,19 @@
         width: 50%;
         height: 50%;
         margin: 0.75em auto;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .Timeline{
+        &-container{
+            flex-direction: column-reverse;
+        }
+    }
+    .Slider{
+        max-width: 100%;
+    }
+    .InfoCard{
+        max-width: 100%;
     }
 }
