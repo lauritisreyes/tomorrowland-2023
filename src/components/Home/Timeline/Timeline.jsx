@@ -49,6 +49,9 @@ const Info = ({ year, title, text}) => {
 
 const Slider = () => {
 
+    const [ foto, setFoto] = useState(0)
+    
+
     const slides = [
         { id : 0, url : '/assets/2022-1.jpg', title : 'Photo1'},
         { id : 1, url : '/assets/2022-2.jpg', title : 'Photo2'},
@@ -66,7 +69,7 @@ const Slider = () => {
             <div className="Slider-container">
                 <div className="Slider-hidden">
                     <ul className="Slider-img">
-                        {slides.map( ({ id, url, title }) =>
+                        {slides && slides.map( ({ id, url, title }) =>
                             <li key={id} className="Slider-photo">
                                 <img src={url} alt={title} loading='lazy' />
                             </li>
@@ -74,7 +77,7 @@ const Slider = () => {
                     </ul>
 
                     <ul className="Slider-control">
-                        {slides.map( ({id}) =>
+                        {slides && slides.map( ({id}) =>
                             <li key={id} className="Slider-control-part"></li>
                         )}
                     </ul>
