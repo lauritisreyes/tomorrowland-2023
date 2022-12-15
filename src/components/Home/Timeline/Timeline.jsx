@@ -46,7 +46,7 @@ const Info = ({ year, title, text}) => {
 
 const Slider = () => {
 
-    const [ foto, setFoto] = useState(0)
+    const [ foto, setFoto ] = useState(0)
     
     const slides = [
         { id : 0, url : '/assets/2022-1.jpg', title : 'Photo1'},
@@ -61,7 +61,12 @@ const Slider = () => {
     ]
 
     const desplazarMas = () => {
+
         setFoto( foto + 1 )
+
+        if( foto >= slides.length){
+            foto = 0
+        }
     }
 
     const desplazarMenos = () => {
@@ -72,23 +77,24 @@ const Slider = () => {
         <div className="Slider">
             <div className="Slider-container">
                 <div className="Slider-hidden">
-                    <ul className="Slider-img">
+                    <ul 
+                        className="Slider-img"
+                        style={ {
+                            transform : `translateX(-${ 100 / slides.length * foto}%)`
+                        } }>
                         {slides && slides.map( ({ id, url, title }) =>
                             <li 
                                 key={id} 
-                                className={ `Slider-photo ${ foto === id ? 'isActive' : ''}`}>
+                                className="Slider-photo">
                                 <img src={url} alt={title} loading='lazy' />
                             </li>
                         )}
                     </ul>
 
                     <ul className="Slider-control">
-                        {slides && slides.map( ({id}) =>
-                            <li 
-                                key={id} 
-                                className="Slider-control-part">
-                            </li>
-                        )}
+                        { slides && slides.map( ({ id }) =>
+                             <li key={id} className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}`}></li>
+                        ) }
                     </ul>
                 </div>
 

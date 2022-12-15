@@ -80,12 +80,12 @@
         transition: all 0.5s ease;
         // transform: translateX(-11.11%);
     }
-    &-photo{
-        display: none;
-        &.isActive{
-            display: block;
-        }
-    }
+    // &-photo{
+    //     display: none;
+    //     &.isActive{
+    //         display: block;
+    //     }
+    // }
     &-control{
         width: 50%;
         height: 0.2em;
