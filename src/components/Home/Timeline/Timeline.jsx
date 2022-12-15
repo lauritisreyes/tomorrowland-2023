@@ -51,7 +51,6 @@ const Slider = () => {
 
     const [ foto, setFoto] = useState(0)
     
-
     const slides = [
         { id : 0, url : '/assets/2022-1.jpg', title : 'Photo1'},
         { id : 1, url : '/assets/2022-2.jpg', title : 'Photo2'},
@@ -63,6 +62,10 @@ const Slider = () => {
         { id : 7, url : '/assets/2022-8.jpg', title : 'Photo8'},
         { id : 8, url : '/assets/2022-9.jpg', title : 'Photo9'},
     ]
+
+    const desplazarMas = () => {
+        
+    }
 
     return(
         <div className="Slider">
