@@ -28,6 +28,17 @@ export const Timeline = () => {
                     <Slider />
                 </div>
             </div>
+            {/* <div className="Timeline-item">
+                <Year clase='Timeline-year'>2021</Year>
+                <div className="Timeline-container">
+                    <div className="Timeline-info">
+                        {Grid.map( info =>
+                            <Info key={ info.id } {...info}/>
+                        )}
+                    </div>
+                    <Slider />
+                </div>
+            </div> */}
 
         </div>
 
@@ -106,7 +117,7 @@ const Slider = () => {
                 </div>
 
                 <button onClick={desplazarMenos} className="Slider-btn Slider-btn-left">
-                    <svg className='Slider-svg' xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                    <svg className='Slider-svg' xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                     </svg>
                 </button>

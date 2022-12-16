@@ -20,6 +20,8 @@
     }
     &-item{
         position: relative;
+        width: 100%;
+        // min-height: 100vh;
     }
     &-year{
         text-align: right;
@@ -31,6 +33,7 @@
         align-items: flex-start;
         position: absolute;
         top: 19em;
+        gap: 5em;
     }
     &-info{
         margin: 3em 0;
@@ -124,6 +127,8 @@
     .Timeline{
         &-container{
             flex-direction: column-reverse;
+            gap: 0;
+            top: 14.5em;
         }
     }
     .Slider{
@@ -131,5 +136,24 @@
     }
     .InfoCard{
         max-width: 100%;
+    }
+}
+@media screen and (max-width:768px) {
+    .Timeline{
+        &-container{
+            top: 10em;
+        }
+    }
+}
+@media screen and (max-width:520px) {
+    .Timeline{
+        &-container{
+            top: 5em;
+        }
+    }
+    .Slider{
+        &-btn{
+            
+        }
     }
 }

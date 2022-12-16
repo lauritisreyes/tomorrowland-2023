@@ -3,3 +3,19 @@
     color: black;
     text-shadow: 0 0 2px rgb(250 249 248 / 50%);
 }
+
+@media screen and (max-width:1024px) {
+    .Year{
+        font-size: 15em;
+    }
+}
+@media screen and (max-width:768px) {
+    .Year{
+        font-size: 10em;
+    }
+}
+@media screen and (max-width:520px) {
+    .Year{
+        font-size: 5em;
+    }
+}
