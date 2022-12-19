@@ -3,7 +3,7 @@
     height: 100%;
     color: #FAF9F8;
     text-align: center;
-    max-width: 70%;
+    max-width: 1400px;
     margin: auto;
     &-h2{
         font-size: 3em;
@@ -37,7 +37,7 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: flex-start;
-        margin: -1em 0 5em;
+        margin: -1em 0 0;
         gap: 5em;
     }
     &-info{
@@ -130,6 +130,7 @@
 
 @media screen and (max-width:1700px) {
     .Timeline{
+        padding: 0 2em;
         &-item{
             width: 100%;
             &:nth-child(odd){
@@ -151,5 +152,40 @@
     }
     .InfoCard{
         max-width: 100%;
+    }
+}
+@media screen and (max-width:768px) {
+    .Slider{
+        margin-top: 0.6em;
+    }
+    .InfoCard{
+        padding: 1em 1.5em;
+    }
+}
+@media screen and (max-width:520px) {
+    .InfoCard{
+        &-year{
+            font-size: 0.6em;
+        }
+        &-text{
+            font-size: 0.6em;
+        }
+    }
+    .Slider{
+        &-btn{
+            width: 2em;
+            height: 2em;
+        }
+        &-btn-left{
+            top: calc( 50% - 1.5em);
+            left: 0;
+        }
+        &-btn-right{
+            top: calc( 50% - 1.5em);
+            right: 0;
+        }
+        &-svg{
+            margin: 0.5em auto;
+        }
     }
 }
