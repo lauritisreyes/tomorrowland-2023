@@ -4,7 +4,7 @@ import './Timeline.scss'
 
 export const Timeline = () => {
 
-    const grid = [
+    const Grid = [
         {id : 0, year : '2022', title : 'The Reflection of Love', text : 'In 2022, Tomorrowland made its grand return to the beautiful and unique scenery of De Schorre, welcoming more than 600,000 People of Tomorrow to celebrate together during 3 wonderful weekends of magic. The 16th edition of Tomorrowland revolved around a magnificent new tale ‘The Reflection of Love’, symbolizing the positive energy the festival stands for. The whole world united again in one magical place filled with energy and love, embracing the gift of life and reflecting all that is positive from around the globe while enjoying mesmerizing performances of more than 800 of the planet’s finest electronic artists, including Alesso, Amelie Lens, Armin van Buuren, Charlotte de Witte, Dimitri Vegas & Like Mike, Diplo, Eric Prydz, Lost Frequencies, Marshmello, Martin Garrix, Paul Kalkbrenner and many more…'},
     ]
 
@@ -21,7 +21,7 @@ export const Timeline = () => {
                 <Year clase='Timeline-year'>2022</Year>
                 <div className="Timeline-container">
                     <div className="Timeline-info">
-                        {grid.map( info =>
+                        {Grid.map( info =>
                             <Info key={ info.id } {...info}/>
                         )}
                     </div>
@@ -32,7 +32,7 @@ export const Timeline = () => {
                 <Year clase='Timeline-year'>2021</Year>
                 <div className="Timeline-container">
                     <div className="Timeline-info">
-                        {grid.map( info =>
+                        {Grid.map( info =>
                             <Info key={ info.id } {...info}/>
                         )}
                     </div>

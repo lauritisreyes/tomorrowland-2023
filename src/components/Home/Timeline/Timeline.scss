@@ -21,7 +21,6 @@
     &-item{
         position: relative;
         width: 100%;
-        // min-height: 100vh;
     }
     &-year{
         text-align: right;
@@ -33,9 +32,6 @@
         align-items: flex-start;
         margin: -7em 0;
         gap: 5em;
-        // &:nth-child(even){
-        //     flex-flow: row-reverse nowrap;
-        // }
     }
     &-info{
         margin: 3em 0;
@@ -125,12 +121,11 @@
     }
 }
 
-@media screen and (max-width:1400px) {
+@media screen and (max-width:1700px) {
     .Timeline{
         &-container{
             flex-direction: column-reverse;
             gap: 0;
-            top: 14.5em;
         }
     }
     .Slider{
