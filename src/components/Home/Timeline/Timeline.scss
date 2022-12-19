@@ -31,9 +31,11 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: flex-start;
-        position: absolute;
-        top: 19em;
+        margin: -7em 0;
         gap: 5em;
+        // &:nth-child(even){
+        //     flex-flow: row-reverse nowrap;
+        // }
     }
     &-info{
         margin: 3em 0;
@@ -123,7 +125,7 @@
     }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1400px) {
     .Timeline{
         &-container{
             flex-direction: column-reverse;
@@ -138,17 +140,24 @@
         max-width: 100%;
     }
 }
+@media screen and (max-width:1024px) {
+    .Timeline{
+        &-container{
+            margin: -5em 0;
+        }
+    }
+}
 @media screen and (max-width:768px) {
     .Timeline{
         &-container{
-            top: 10em;
+            margin: -3.5em 0;
         }
     }
 }
 @media screen and (max-width:520px) {
     .Timeline{
         &-container{
-            top: 5em;
+            margin: -1.5em 0;
         }
     }
     .Slider{
