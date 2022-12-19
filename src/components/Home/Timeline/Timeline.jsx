@@ -38,6 +38,39 @@ export const Timeline = () => {
                 { id : 6, url : '/assets/2021-7.jpg', title : 'Photo7'},
             ]
         },
+        { 
+            id : 2 ,
+            year : '2020',
+            title : 'Around the World and 31.12.2020',
+            text : 'An exceptional and challenging year called for new ventures to explore… On the cancellation of Tomorrowland Winter in France and the summer edition in Belgium due to COVID-19, Tomorrowland took a leap into the wonderful digital world, opening the doors to the future on the magical island of Papilionem with the first edition of Tomorrowland Around the World on July 25 & 26. Closing off the year in style with a magical New Year’s Eve celebration, people from all corners of the world counted down to 2021 and danced into the new year at Tomorrowland 31.12.2020.',
+            slides : [
+                { id : 0, url : '/assets/2020-000.jpg', title : 'Photo1'},
+                { id : 1, url : '/assets/2020-001.jpg', title : 'Photo2'},
+                { id : 2, url : '/assets/2020-002.jpg', title : 'Photo3'},
+                { id : 3, url : '/assets/2020-003.jpg', title : 'Photo4'},
+                { id : 4, url : '/assets/2020-004.jpg', title : 'Photo5'},
+                { id : 5, url : '/assets/2020-005.jpg', title : 'Photo6'},
+                { id : 6, url : '/assets/2020-006.jpg', title : 'Photo7'},
+                { id : 6, url : '/assets/2020-007.jpg', title : 'Photo7'},
+            ]
+        },
+        { 
+            id : 3 ,
+            year : '2019',
+            title : 'The Book of Wisdom – The Return',
+            text : 'After a first magical edition of Tomorrowland Winter in Alpe d’Huez (March 2019), the 15th Year Celebration edition in Belgium welcomed back one of the most legendary stories ever told. 400,000 People of Tomorrow wrote their own chapter in The Book of Wisdom and witnessed performances by Dimitri Vegas & Like Mike, The Chainsmokers, Martin Garrix, Lost Frequencies, Armin van Buuren, Afrojack and many other incredible artists.',
+            slides : [
+                { id : 0, url : '/assets/2019-1.jpg', title : 'Photo1'},
+                { id : 1, url : '/assets/2019-2.jpg', title : 'Photo2'},
+                { id : 2, url : '/assets/2019-3.jpg', title : 'Photo3'},
+                { id : 3, url : '/assets/2019-4.jpg', title : 'Photo4'},
+                { id : 4, url : '/assets/2019-5.jpg', title : 'Photo5'},
+                { id : 5, url : '/assets/2019-6.jpg', title : 'Photo6'},
+                { id : 6, url : '/assets/2019-7.jpg', title : 'Photo7'},
+                { id : 6, url : '/assets/2019-8.jpg', title : 'Photo7'},
+                { id : 6, url : '/assets/2019-9.jpg', title : 'Photo7'},
+            ]
+        },
     ]
 
     return(

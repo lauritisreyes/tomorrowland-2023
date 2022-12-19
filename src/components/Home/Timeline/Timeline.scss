@@ -19,16 +19,18 @@
     }
     &-item{
         width: 100%;
-        &:nth-of-type(2){
-            
+        &:nth-child(odd){
+            .Timeline-container{
+                flex-flow: row-reverse;
+            }
+            .Timeline-year{
+                text-align: left;
+            }
         }
     }
     &-year{
         text-align: right;
         line-height: 0.75;
-        &:nth-of-type(2){
-            text-align: left;
-        }
     }
     &-container{
         display: flex;
@@ -128,6 +130,17 @@
 
 @media screen and (max-width:1700px) {
     .Timeline{
+        &-item{
+            width: 100%;
+            &:nth-child(odd){
+                .Timeline-container{
+                    flex-flow: column-reverse;
+                }
+                .Timeline-year{
+                    text-align: left;
+                }
+            }
+        }
         &-container{
             flex-direction: column-reverse;
             gap: 0;
