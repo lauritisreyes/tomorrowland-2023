@@ -18,18 +18,24 @@
         margin: 0 0 5em;
     }
     &-item{
-        position: relative;
         width: 100%;
+        &:nth-of-type(2){
+            
+        }
     }
     &-year{
         text-align: right;
+        line-height: 0.75;
+        &:nth-of-type(2){
+            text-align: left;
+        }
     }
     &-container{
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: flex-start;
-        margin: -7em 0 5em;
+        margin: -1em 0 0;
         gap: 5em;
     }
     &-info{
@@ -73,7 +79,7 @@
         overflow: hidden;
     }
     &-img{
-        width: 1000%;
+        // width: 900%;
         height: 100%;
         display: flex;
         flex-flow: row nowrap;
@@ -132,31 +138,5 @@
     }
     .InfoCard{
         max-width: 100%;
-    }
-}
-@media screen and (max-width:1024px) {
-    .Timeline{
-        &-container{
-            margin: -5em 0;
-        }
-    }
-}
-@media screen and (max-width:768px) {
-    .Timeline{
-        &-container{
-            margin: -3.5em 0;
-        }
-    }
-}
-@media screen and (max-width:520px) {
-    .Timeline{
-        &-container{
-            margin: -1.5em 0;
-        }
-    }
-    .Slider{
-        &-btn{
-            
-        }
     }
 }
