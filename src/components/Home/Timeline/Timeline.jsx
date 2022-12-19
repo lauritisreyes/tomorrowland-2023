@@ -28,7 +28,7 @@ export const Timeline = () => {
                     <Slider />
                 </div>
             </div>
-            <div className="Timeline-item">
+            {/* <div className="Timeline-item">
                 <Year clase='Timeline-year'>2021</Year>
                 <div className="Timeline-container">
                     <div className="Timeline-info">
@@ -38,7 +38,7 @@ export const Timeline = () => {
                     </div>
                     <Slider />
                 </div>
-            </div>
+            </div> */}
 
         </div>
 
