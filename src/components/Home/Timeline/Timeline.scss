@@ -98,11 +98,14 @@
         background-color: rgba(128, 128, 128, 0.2);
     }
     &-control-part{
-        width: calc( 100% / 9);
+        // width: calc( 100% / 9);
         height: 100%;
         &:hover{
             background-color: #FAF9F8;
             cursor: pointer;
+        }
+        &.isActive{
+            background-color: #FAF9F8;
         }
     }
     &-btn{
@@ -112,6 +115,7 @@
         background-color: white;
         color: gray;
         position: absolute;
+        cursor: pointer;
     }
     &-btn-left{
         top: calc( 50% - 1.5em);

@@ -51,7 +51,7 @@ export const Timeline = () => {
                 { id : 4, url : '/assets/2020-004.jpg', title : 'Photo5'},
                 { id : 5, url : '/assets/2020-005.jpg', title : 'Photo6'},
                 { id : 6, url : '/assets/2020-006.jpg', title : 'Photo7'},
-                { id : 6, url : '/assets/2020-007.jpg', title : 'Photo7'},
+                { id : 7, url : '/assets/2020-007.jpg', title : 'Photo7'},
             ]
         },
         { 
@@ -67,8 +67,8 @@ export const Timeline = () => {
                 { id : 4, url : '/assets/2019-5.jpg', title : 'Photo5'},
                 { id : 5, url : '/assets/2019-6.jpg', title : 'Photo6'},
                 { id : 6, url : '/assets/2019-7.jpg', title : 'Photo7'},
-                { id : 6, url : '/assets/2019-8.jpg', title : 'Photo7'},
-                { id : 6, url : '/assets/2019-9.jpg', title : 'Photo7'},
+                { id : 7, url : '/assets/2019-8.jpg', title : 'Photo7'},
+                { id : 8, url : '/assets/2019-9.jpg', title : 'Photo7'},
             ]
         },
     ]
@@ -153,12 +153,17 @@ const Slider = ({ slides }) => {
                         )}
                     </ul>
 
-                    <ul className="Slider-control">
+                    <ul 
+                        className="Slider-control">
                         { slides && slides.map( ({ id }) =>
                              <li 
                                 key={id} 
                                 onClick={ ()=> change(id)}
-                                className="Slider-control-part"></li>
+                                className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}` }
+                                style={ {
+                                    width : `${ slides.length * 100 }%`
+                                } } >
+                                </li>
                         ) }
                     </ul>
                 </div>
