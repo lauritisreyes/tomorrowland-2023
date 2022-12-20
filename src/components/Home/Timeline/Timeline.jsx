@@ -153,12 +153,17 @@ const Slider = ({ slides }) => {
                         )}
                     </ul>
 
-                    <ul className="Slider-control">
+                    <ul 
+                        className="Slider-control">
                         { slides && slides.map( ({ id }) =>
                              <li 
                                 key={id} 
                                 onClick={ ()=> change(id)}
-                                className="Slider-control-part"></li>
+                                className={ `Slider-control-part ${ foto === id ? 'isActive' : ''}` }
+                                style={ {
+                                    width : `${ slides.length * 100 }%`
+                                } } >
+                                </li>
                         ) }
                     </ul>
                 </div>
