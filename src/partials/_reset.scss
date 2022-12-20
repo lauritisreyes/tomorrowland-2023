@@ -14,6 +14,9 @@
     box-sizing: border-box;
     vertical-align: baseline;
 }
+*::before , *::after{
+    display: block;
+}
 
 img , picture , video , iframe , figure{
     max-width: 100%;
