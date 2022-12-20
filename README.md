@@ -5,7 +5,7 @@
 Esta es la copia de la web del festival Tomorrowland donde hemos practicado a trabajar con componentes de React en equipo.
 
 [![Original website](https://img.shields.io/static/v1?label=&message=Original%20Site&color=4d94b3&style=for-the-badge)](https://www.tomorrowland.com/en/festival/welcome)
-[![Live Site](https://tomorrowland-2023.netlify.app)
+[![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=6cccb4&style=for-the-badge)](https://tomorrowland-2023.netlify.app)
 [![Github Repository](https://img.shields.io/static/v1?label=&message=Github%20Repository&color=000000&style=for-the-badge&logo=github&logoColor=white)](https://github.com/eduardofierropro/tomorrowland-2023)
 
 ## Tecnologías usadas
