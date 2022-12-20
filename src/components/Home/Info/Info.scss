@@ -7,7 +7,7 @@
         @include grid (3,2rem);
         max-width: 1400px;
         margin: auto;
-        padding: 6rem 1rem;
+        padding: 2rem 1rem 6rem 1rem;
         @media (max-width: 1200px) {
             @include grid (2,2rem);
         }

@@ -3,6 +3,8 @@
 
 .Footer {
     @include flex (column, nowrap, center, center);
+    margin-top: 7rem;
+    margin-bottom: 0.5rem;
     &-logo {
         width: 240px;
     }

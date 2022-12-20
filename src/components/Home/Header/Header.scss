@@ -124,6 +124,11 @@
     margin: auto;
     padding: 0 1rem;
     margin-top: 1.25rem;
+    position: absolute;
+    top: 2.3rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
     @media (max-width: 1000px) {
         width: 370px;
         margin-left: auto;
